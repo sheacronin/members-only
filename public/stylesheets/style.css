@@ -1,8 +1,62 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+body {
+  background: no-repeat -webkit-gradient(linear, left top, left bottom, from(pink), to(#ffe3e7));
+  background: no-repeat linear-gradient(pink, #ffe3e7);
 }
+
+header {
+  background-color: #9b5f7d;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}
+
+header ul li a:hover {
+  color: pink;
+  text-decoration: underline;
+}
+
+form {
+  background-color: white;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+}
+
+form label,
+form button {
+  margin-top: 20px;
+}
+
+form label:first-child,
+form button:first-child {
+  margin-top: 0;
+}
+
+form input {
+  line-height: 1.5;
+}
+/*# sourceMappingURL=style.css.map */

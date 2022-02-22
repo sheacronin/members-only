@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: no-repeat linear-gradient(pink, rgb(255, 227, 231));
+}
+
+header {
+    background-color: rgb(155, 95, 125);
+
+    ul {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        li {
+            a {
+                color: white;
+                text-decoration: none;
+                padding: 20px;
+
+                &:hover {
+                    color: pink;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+form {
+    background-color: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    label,
+    button {
+        margin-top: 20px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    input {
+        line-height: 1.5;
+    }
+}
