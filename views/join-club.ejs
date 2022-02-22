@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/reset.css" />
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <%- include('header'); -%>
+        <h1><%= title %></h1>
+        <p>
+            Join the club! Enter the secret passcode below to become a member.
+        </p>
+        <p>
+            Finish the sentence: "You are the dancing queen, young and sweet,
+            only _______."
+        </p>
+
+        <form action="" method="POST">
+            <input
+                type="text"
+                required
+                placeholder="passcode"
+                id="passcode"
+                name="passcode"
+            />
+            <button type="submit">Enter Passcode</button>
+        </form>
+    </body>
+</html>
