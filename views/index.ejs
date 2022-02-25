@@ -14,5 +14,15 @@
             Welcome to <%= title %> <% if (currentUser) { %>, <%=
             currentUser.username %> <% } %>
         </p>
+
+        <% messages.forEach(message => { %>
+        <article>
+            <h2><%= message.title %></h2>
+            <% if (currentUser && currentUser.isMember) { %>
+            <p>By <%= message.author.username %> at <%= message.timestamp %></p>
+            <% } %>
+            <p><%= message.text %></p>
+        </article>
+        <% }) %>
     </body>
 </html>

@@ -4,9 +4,7 @@ const userController = require('../controllers/userController');
 const messageController = require('../controllers/messageController');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Members Only' });
-});
+router.get('/', messageController.indexMessages);
 
 router.get('/sign-up', userController.userSignUpGet);
 router.post('/sign-up', userController.userSignUpPost);
