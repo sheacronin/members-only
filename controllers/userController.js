@@ -138,8 +138,17 @@ exports.joinClubPost = [
             });
             return;
         } else {
-            // find user
-            // change user memberstatus
+            console.log(req.user);
+            User.findByIdAndUpdate(
+                req.user._id,
+                { isMember: true },
+                {},
+                (err, user) => {
+                    if (err) return next(err);
+
+                    res.redirect('/');
+                }
+            );
         }
     },
 ];
