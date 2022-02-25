@@ -7,7 +7,9 @@
             <li><a href="/join-club">Become a Member</a></li>
             <% if (currentUser) { %>
             <li><%= currentUser.username %></li>
-            <% } %>
+            <% if (currentUser.isMember) { %>
+            <li><a href="/create-message">Create a Message</a></li>
+            <% } } %>
         </ul>
     </nav>
 </header>
