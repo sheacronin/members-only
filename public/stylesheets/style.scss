@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -7,9 +9,11 @@ $primary-color-darker: #fdc4d5;
 $secondary-color: #0b132b;
 
 body {
-    font: 16px sans-serif;
+    font-size: 18px;
+    font-family: 'League Spartan', sans-serif;
     color: $secondary-color;
     text-align: center;
+    line-height: 1.5;
 }
 
 header {
