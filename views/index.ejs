@@ -9,20 +9,25 @@
     </head>
     <body>
         <%- include('header'); -%>
-        <h1><%= title %></h1>
-        <p>
-            Welcome to <%= title %> <% if (currentUser) { %>, <%=
-            currentUser.username %> <% } %>
-        </p>
+        <main>
+            <h1><%= title %></h1>
+            <p>
+                Welcome to <%= title %><% if (currentUser) { %>, <%=
+                currentUser.username %> <% } %>
+            </p>
 
-        <% messages.forEach(message => { %>
-        <article>
-            <h2><%= message.title %></h2>
-            <% if (currentUser && currentUser.isMember) { %>
-            <p>By <%= message.author.username %> at <%= message.timestamp %></p>
-            <% } %>
-            <p><%= message.text %></p>
-        </article>
-        <% }) %>
+            <% messages.forEach(message => { %>
+            <article class="message">
+                <h2><%= message.title %></h2>
+                <% if (currentUser && currentUser.isMember) { %>
+                <p class="byline">
+                    By <%= message.author.username %> at <%= message.timestamp
+                    %>
+                </p>
+                <% } %>
+                <p class="message-text"><%= message.text %></p>
+            </article>
+            <% }) %>
+        </main>
     </body>
 </html>

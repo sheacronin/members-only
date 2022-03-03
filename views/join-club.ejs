@@ -9,24 +9,28 @@
     </head>
     <body>
         <%- include('header'); -%>
-        <h1><%= title %></h1>
-        <p>
-            Join the club! Enter the secret passcode below to become a member.
-        </p>
-        <p>
-            Finish the sentence: "You are the dancing queen, young and sweet,
-            only _______."
-        </p>
+        <main>
+            <h1><%= title %></h1>
+            <p>
+                Join the club! Enter the secret passcode below to become a
+                member.
+            </p>
+            <p>
+                Finish the sentence: "You are the dancing queen, young and
+                sweet, only _______."
+            </p>
 
-        <form action="" method="POST">
-            <input
-                type="text"
-                required
-                placeholder="passcode"
-                id="passcode"
-                name="passcode"
-            />
-            <button type="submit">Enter Passcode</button>
-        </form>
+            <form action="" method="POST">
+                <label for="passcode">What is the passcode?</label>
+                <input
+                    type="text"
+                    required
+                    placeholder="passcode"
+                    id="passcode"
+                    name="passcode"
+                />
+                <button type="submit">Enter Passcode</button>
+            </form>
+        </main>
     </body>
 </html>

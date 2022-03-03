@@ -6,7 +6,6 @@
             <li><a href="/log-in">Log In</a></li>
             <% if (currentUser) { %>
             <li><a href="/join-club">Become a Member</a></li>
-            <li><%= currentUser.username %></li>
             <% if (currentUser.isMember) { %>
             <li><a href="/create-message">Create a Message</a></li>
             <% } } %>

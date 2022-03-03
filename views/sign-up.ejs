@@ -9,37 +9,59 @@
     </head>
     <body>
         <%- include('header'); -%>
-        <h1><%= title %></h1>
-        <form action="" method="POST">
-            <label for="username">Username</label>
-            <input type="text" required id="username" name="username" />
+        <main>
+            <h1><%= title %></h1>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" required id="username" name="username" />
+                </div>
 
-            <label for="firstName">First Name</label>
-            <input type="text" required id="firstName" name="firstName" />
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input
+                        type="text"
+                        required
+                        id="firstName"
+                        name="firstName"
+                    />
+                </div>
 
-            <label for="lastName">Last Name</label>
-            <input type="text" required id="lastName" name="lastName" />
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" required id="lastName" name="lastName" />
+                </div>
 
-            <label for="password">Password</label>
-            <input type="password" required id="password" name="password" />
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        required
+                        id="password"
+                        name="password"
+                    />
+                </div>
 
-            <label for="confirmPassword">Confrim Password</label>
-            <input
-                type="password"
-                required
-                id="confirmPassword"
-                name="confirmPassword"
-            />
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        required
+                        id="confirmPassword"
+                        name="confirmPassword"
+                    />
+                </div>
 
-            <button type="submit">Sign Up</button>
-        </form>
+                <button type="submit">Sign Up</button>
+            </form>
 
-        <div class="errors">
-            <ul>
-                <% errors.forEach((error) => { %>
-                <li><%= error.msg %></li>
-                <% }); %>
-            </ul>
-        </div>
+            <div class="errors">
+                <ul>
+                    <% errors.forEach((error) => { %>
+                    <li><%= error.msg %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </main>
     </body>
 </html>

@@ -4,19 +4,21 @@
 }
 
 body {
-  background: no-repeat -webkit-gradient(linear, left top, left bottom, from(pink), to(#ffe3e7));
-  background: no-repeat linear-gradient(pink, #ffe3e7);
+  font: 16px sans-serif;
+  color: #0b132b;
+  text-align: center;
 }
 
 header {
-  background-color: #9b5f7d;
+  background-color: #0b132b;
+  color: white;
 }
 
 header ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 50px;
+  height: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -29,13 +31,52 @@ header ul li a {
 }
 
 header ul li a:hover {
-  color: pink;
+  color: #fdcfdd;
   text-decoration: underline;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+main {
+  height: calc(100vh - 70px);
+  padding: 20px 10px 0 10px;
+  background: no-repeat -webkit-gradient(linear, left top, left bottom, from(#fdcfdd), to(#fdc4d5));
+  background: no-repeat linear-gradient(#fdcfdd, #fdc4d5);
+}
+
+.message {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  -webkit-box-shadow: 2px 2px 2px #00000040;
+          box-shadow: 2px 2px 2px #00000040;
+  line-height: 1.5;
+}
+
+.message h2 {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.message .byline {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.message .message-text {
+  padding-top: 10px;
+  border-top: 1px solid #00000040;
 }
 
 form {
   background-color: white;
-  margin: 20px;
+  margin: 20px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,19 +85,48 @@ form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
+  max-width: 600px;
+  text-align: left;
+  -webkit-box-shadow: 2px 2px 2px #00000040;
+          box-shadow: 2px 2px 2px #00000040;
 }
 
-form label,
-form button {
+form .form-group {
   margin-top: 20px;
 }
 
-form label:first-child,
-form button:first-child {
+form .form-group:first-child {
   margin-top: 0;
 }
 
-form input {
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input,
+form textarea {
   line-height: 1.5;
+  width: 100%;
+  border: 1px solid #00000040;
+  -webkit-box-shadow: 2px 2px #00000040;
+          box-shadow: 2px 2px #00000040;
+  padding: 8px;
+  font: inherit;
+}
+
+form textarea {
+  resize: none;
+  height: 200px;
+}
+
+form button {
+  width: 200px;
+  margin: 20px 0 0 auto;
+  background-color: #0b132b;
+  border: none;
+  color: white;
+  padding: 10px;
+  font: inherit;
 }
 /*# sourceMappingURL=style.css.map */
