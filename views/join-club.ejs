@@ -31,6 +31,14 @@
                 <p>You're already a member!</p>
                 <p>Want to <a href="/become-admin">become an admin</a>? 👀</p>
             </div>
+            <% } %> <% if (locals.errors) { %>
+            <div class="errors">
+                <ul>
+                    <% errors.forEach((error) => { %>
+                    <li>⚠️ <%= error.msg %></li>
+                    <% }); %>
+                </ul>
+            </div>
             <% } %>
         </main>
     </body>

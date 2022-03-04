@@ -18,6 +18,15 @@
 
                 <button type="submit">Post Message</button>
             </form>
+            <% if (locals.errors) { %>
+            <div class="errors">
+                <ul>
+                    <% errors.forEach((error) => { %>
+                    <li>⚠️ <%= error.msg %></li>
+                    <% }); %>
+                </ul>
+            </div>
+            <% } %>
         </main>
     </body>
 </html>

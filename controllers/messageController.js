@@ -18,9 +18,12 @@ exports.createMessageGet = (req, res) => {
 exports.createMessagePost = [
     body('title', 'Title must be specified')
         .trim()
-        .isLength({ max: 40 })
+        .isLength({ min: 1, max: 40 })
         .escape(),
-    body('text', 'Message text must be specified').trim().escape(),
+    body('text', 'Message text must be specified')
+        .trim()
+        .isLength({ min: 1 })
+        .escape(),
 
     (req, res, next) => {
         const errors = validationResult(req);

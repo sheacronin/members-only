@@ -5,7 +5,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 exports.userSignUpGet = (req, res) => {
-    res.render('sign-up', { title: 'Sign Up', errors: [] });
+    res.render('sign-up', { title: 'Sign Up' });
 };
 
 exports.userSignUpPost = [
@@ -13,8 +13,14 @@ exports.userSignUpPost = [
         .trim()
         .isLength({ min: 3, max: 30 })
         .escape(),
-    body('firstName', 'First name must be specified').trim().escape(),
-    body('lastName', 'Last name must be specified').trim().escape(),
+    body('firstName', 'First name must be specified')
+        .trim()
+        .isLength({ min: 1 })
+        .escape(),
+    body('lastName', 'Last name must be specified')
+        .trim()
+        .isLength({ min: 1 })
+        .escape(),
     body('password', 'You must have a password'),
     body('confirmPassword').custom((value, { req }) => {
         if (value !== req.body.password) {
