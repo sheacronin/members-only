@@ -27,7 +27,16 @@
                 <% } %>
                 <p class="message-text"><%= message.text %></p>
                 <% if (currentUser && currentUser.isAdmin) { %>
-                <button>Delete</button>
+                <form action="" method="POST">
+                    <input
+                        type="hidden"
+                        name="messageId"
+                        id="messageId"
+                        required
+                        value="<%= message.id %>"
+                    />
+                    <button>Delete</button>
+                </form>
                 <% } %>
             </article>
             <% }) %>

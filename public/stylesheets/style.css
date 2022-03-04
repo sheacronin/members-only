@@ -73,7 +73,6 @@ main {
   max-width: 600px;
   -webkit-box-shadow: 2px 2px 2px #00000040;
           box-shadow: 2px 2px 2px #00000040;
-  line-height: 1.5;
   text-align: right;
 }
 
@@ -99,7 +98,7 @@ main {
   padding: 2px 10px 0 10px;
 }
 
-form {
+.display-form {
   background-color: white;
   margin: 20px auto;
   display: -webkit-box;
@@ -116,21 +115,21 @@ form {
           box-shadow: 2px 2px 2px #00000040;
 }
 
-form .form-group {
+.display-form .form-group {
   margin-top: 20px;
 }
 
-form .form-group:first-child {
+.display-form .form-group:first-child {
   margin-top: 0;
 }
 
-form label {
+.display-form label {
   display: block;
   margin-bottom: 8px;
 }
 
-form input,
-form textarea {
+.display-form input,
+.display-form textarea {
   line-height: 1.5;
   width: 100%;
   border: 1px solid #00000040;
@@ -140,12 +139,12 @@ form textarea {
   font: inherit;
 }
 
-form textarea {
+.display-form textarea {
   resize: none;
   height: 200px;
 }
 
-form button {
+.display-form button {
   width: 200px;
   margin: 20px 0 0 auto;
   padding: 10px;

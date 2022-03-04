@@ -47,3 +47,11 @@ exports.createMessagePost = [
         }
     },
 ];
+
+exports.deleteMessage = (req, res) => {
+    Message.findByIdAndRemove(req.body.messageId, (err) => {
+        if (err) return next(err);
+
+        res.redirect('/');
+    });
+};
