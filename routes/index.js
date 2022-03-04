@@ -22,4 +22,6 @@ router.post('/become-admin', userController.becomeAdminPost);
 router.get('/create-message', messageController.createMessageGet);
 router.post('/create-message', messageController.createMessagePost);
 
+router.get('/log-out', userController.logOut);
+
 module.exports = router;

@@ -1,14 +1,45 @@
 <header>
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/sign-up">Sign Up</a></li>
-            <li><a href="/log-in">Log In</a></li>
-            <% if (currentUser) { %>
-            <li><a href="/join-club">Become a Member</a></li>
-            <% if (currentUser.isMember) { %>
-            <li><a href="/create-message">Create a Message</a></li>
-            <% } } %>
+            <li>
+                <a href="/">
+                    <i class="material-icons">home</i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <% if (!currentUser) { %>
+            <li>
+                <a href="/sign-up">
+                    <i class="material-icons">person_add</i>
+                    <p>Sign Up</p>
+                </a>
+            </li>
+            <li>
+                <a href="/log-in">
+                    <i class="material-icons">login</i>
+                    <p>Log In</p>
+                </a>
+            </li>
+            <% } else { %>
+            <li>
+                <a href="/join-club">
+                    <i class="material-icons">lock_open</i>
+                    <p>Become a Member</p>
+                </a>
+            </li>
+            <li>
+                <a href="/create-message">
+                    <i class="material-icons">edit_note</i>
+                    <p>Create a Message</p>
+                </a>
+            </li>
+            <li>
+                <a href="/log-out">
+                    <i class="material-icons">logout</i>
+                    <p>Log Out</p>
+                </a>
+            </li>
+            <% } %>
         </ul>
     </nav>
 </header>
