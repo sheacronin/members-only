@@ -9,6 +9,7 @@
                 You want to become an admin, with the ability to delete posts?
                 You'll have to know the super secret passcode for this!
             </p>
+            <% if (!currentUser.isAdmin) { %>
             <form class="display-form" action="" method="POST">
                 <label for="passcode">What is the passcode?</label>
                 <input
@@ -20,6 +21,11 @@
                 />
                 <button type="submit">Enter Passcode</button>
             </form>
+            <% } else { %>
+            <div class="already-member">
+                <p>You're already an admin! You have all the power.</p>
+            </div>
+            <% } %>
         </main>
     </body>
 </html>
