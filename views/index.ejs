@@ -8,7 +8,7 @@
             <div class="intro">
                 <p>
                     Welcome to the exclusive Members Only site<% if
-                    (currentUser) { %>, <%= currentUser.username %><% } %>!
+                    (currentUser) { %>, <%= currentUser.firstName %><% } %>!
                 </p>
                 <p>
                     You can see messages left by users here on the home page. If
@@ -31,7 +31,13 @@
                     <div>
                         <h2><%= message.title %></h2>
                         <% if (currentUser && currentUser.isMember) { %>
-                        <p class="byline">by <%= message.author.username %></p>
+                        <p class="byline">
+                            by <%= `${message.author.firstName}
+                            ${message.author.lastName} •` %>
+                            <span class="username">
+                                <%= `@${message.author.username}` %>
+                            </span>
+                        </p>
                         <% } %>
                     </div>
                     <% if (currentUser && currentUser.isMember) { %>
