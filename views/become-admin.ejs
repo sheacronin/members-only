@@ -12,15 +12,9 @@
         <main>
             <h1><%= title %></h1>
             <p>
-                Join the club! Enter the secret passcode below to become a
-                member.
+                You want to become an admin, with the ability to delete posts?
+                You'll have to know the super secret passcode for this!
             </p>
-            <p>
-                Finish the sentence: "You are the dancing queen, young and
-                sweet, only _______."
-            </p>
-
-            <% if (!currentUser.isMember) { %>
             <form action="" method="POST">
                 <label for="passcode">What is the passcode?</label>
                 <input
@@ -32,12 +26,6 @@
                 />
                 <button type="submit">Enter Passcode</button>
             </form>
-            <% } else { %>
-            <div class="already-member">
-                <p>You're already a member!</p>
-                <p>Want to <a href="/become-admin">become an admin</a>? 👀</p>
-            </div>
-            <% } %>
         </main>
     </body>
 </html>

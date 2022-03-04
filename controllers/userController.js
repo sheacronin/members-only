@@ -34,6 +34,7 @@ exports.userSignUpPost = [
                 lastName: req.body.lastName,
                 password: hashedPassword,
                 isMember: false,
+                isAdmin: false,
             });
 
             if (!errors.isEmpty()) {
@@ -142,6 +143,47 @@ exports.joinClubPost = [
             User.findByIdAndUpdate(
                 req.user._id,
                 { isMember: true },
+                {},
+                (err, user) => {
+                    if (err) return next(err);
+
+                    res.redirect('/');
+                }
+            );
+        }
+    },
+];
+
+exports.becomeAdminGet = (req, res) => {
+    res.render('become-admin', { title: 'Become an Admin' });
+};
+
+exports.becomeAdminPost = [
+    body('passcode', 'Must enter a passcode')
+        .trim()
+        .escape()
+        .custom((value, { req }) => {
+            if (value !== process.env.SECRET_ADMIN_PASSCODE) {
+                throw new Error('This is not the correct secret passcode');
+            }
+
+            return true;
+        }),
+
+    (req, res, next) => {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            res.render('become-admin', {
+                title: 'Become an Admin',
+                errors: errors.array(),
+            });
+            return;
+        } else {
+            console.log(req.user._id);
+            User.findByIdAndUpdate(
+                req.user._id,
+                { isAdmin: true },
                 {},
                 (err, user) => {
                     if (err) return next(err);

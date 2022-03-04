@@ -26,6 +26,9 @@
                 </p>
                 <% } %>
                 <p class="message-text"><%= message.text %></p>
+                <% if (currentUser && currentUser.isAdmin) { %>
+                <button>Delete</button>
+                <% } %>
             </article>
             <% }) %>
         </main>

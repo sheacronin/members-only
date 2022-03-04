@@ -15,6 +15,9 @@ router.post('/log-in', userController.logInPost);
 router.get('/join-club', userController.joinClubGet);
 router.post('/join-club', userController.joinClubPost);
 
+router.get('/become-admin', userController.becomeAdminGet);
+router.post('/become-admin', userController.becomeAdminPost);
+
 router.get('/create-message', messageController.createMessageGet);
 router.post('/create-message', messageController.createMessagePost);
 
