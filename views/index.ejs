@@ -12,14 +12,18 @@
 
             <% messages.forEach(message => { %>
             <article class="message">
-                <h2><%= message.title %></h2>
-                <% if (currentUser && currentUser.isMember) { %>
-                <p class="byline">
-                    By <%= message.author.username %> at <%= message.timestamp
-                    %>
-                </p>
-                <% } %>
-                <p class="message-text"><%= message.text %></p>
+                <header>
+                    <div>
+                        <h2><%= message.title %></h2>
+                        <% if (currentUser && currentUser.isMember) { %>
+                        <p class="byline">by <%= message.author.username %></p>
+                        <% } %>
+                    </div>
+                    <% if (currentUser && currentUser.isMember) { %>
+                    <p class="timestamp"><%= message.formattedTimestamp %></p>
+                    <% } %>
+                </header>
+                <p class="message-text"><%- message.text %></p>
                 <% if (currentUser && currentUser.isAdmin) { %>
                 <form action="" method="POST">
                     <input
