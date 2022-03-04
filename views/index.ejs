@@ -5,10 +5,25 @@
         <%- include('header'); -%>
         <main>
             <h1><%= title %></h1>
-            <p>
-                Welcome to <%= title %><% if (currentUser) { %>, <%=
-                currentUser.username %> <% } %>
-            </p>
+            <div class="intro">
+                <p>
+                    Welcome to the exclusive Members Only site<% if
+                    (currentUser) { %>, <%= currentUser.username %><% } %>!
+                </p>
+                <p>
+                    You can see messages left by users here on the home page. If
+                    you are a member, you'll be able to see who posted these
+                    messages!
+                </p>
+                <% if (currentUser && currentUser.isMember) { %>
+                <p>You're in the club!</p>
+                <% } else if (currentUser) { %>
+                <p>
+                    Click <a href="/join-club">become a member</a> to join the
+                    club!
+                </p>
+                <% } %>
+            </div>
 
             <% messages.forEach(message => { %>
             <article class="message">

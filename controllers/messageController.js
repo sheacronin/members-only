@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator');
 
 exports.indexMessages = (req, res) => {
     Message.find()
-        .sort([['timestamp', 'ascending']])
+        .sort([['timestamp', 'descending']])
         .populate('author')
         .exec((err, messages) => {
             if (err) return next(err);

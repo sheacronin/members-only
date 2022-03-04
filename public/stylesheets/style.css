@@ -87,6 +87,19 @@ main {
   background: no-repeat linear-gradient(#fdcfdd, #fdc4d5);
 }
 
+.intro {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.intro a {
+  color: #f9628f;
+}
+
+.intro a:hover {
+  color: #0b132b;
+}
+
 .message {
   background-color: white;
   margin: 20px auto;

@@ -88,6 +88,19 @@ main {
     background: no-repeat linear-gradient($primary-color, $primary-color-darker);
 }
 
+.intro {
+    max-width: 600px;
+    margin: 0 auto;
+
+    a {
+        color: $primary-color-vibrant;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
 .message {
     background-color: white;
     margin: 20px auto;
